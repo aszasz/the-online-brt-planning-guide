@@ -2,6 +2,7 @@ html {
 	font-family: 'PT Serif', serif;
 	color: #333;
 }
+/* quad (used as span class) to insert a space between texts (e.g. figure and section numbers and the description text) */
 .quad {
 	display: inline-block;
 	width: .75em;
@@ -60,7 +61,7 @@ img {
 	padding: 0;
 }
 
-/* sm md lg */
+/* small  medium  large */
 
 .sm {
 	width: 256px;
