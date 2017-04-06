@@ -22,6 +22,7 @@ class Main {
 		var myUrl = J("base").attr("x-rel-path");
 		assert(myUrl != null);
 		var me = toc.find('a[href="$myUrl"]').not("#toc-menu").parent();
+		var next = me
 		assert(me.length > 0, myUrl);
 		assert(me.is("li"));
 		assert(me.hasClass("volume") || me.hasClass("chapter") || me.hasClass("section"), "classes used in selectors");
@@ -30,7 +31,7 @@ class Main {
 		me.children("ul").find("ul").remove();
 		assert(toc.find('a[href="$myUrl"]').parent().children("ul").find("ul").length == 0);
 
-		// remove distant ancestors
+		// remove distant relatives
 		if (me.hasClass("volume")) {
 			toc.find("li.chapter").not(me.find("li.chapter")).remove();
 		} else if (me.hasClass("chapter")) {
@@ -47,6 +48,8 @@ class Main {
 
 		J("#toc-loading").remove();
 		J("nav").append(toc);
+		J("#next-loading").remove();
+		J("next").append(next);
 	}
 
 	static function figClick(e:Event)

@@ -480,7 +480,8 @@ class Generator {
 		for (p in bufs.keys()) {
 			var b = bufs[p];
 			if (p.endsWith(".html")) {
-				b.add("</div>\n");
+                b.add('<div class="next"><span id="next-loading">Loading the next section...</span></div>\n'); // FIXME BEFORE MERGE:NEEDS TO FIND OUT WHO IS NEXT...
+				b.add('</div>\n');
 				b.add('<nav id="action:navigate"><span id="toc-loading">Loading the table of contents...</span></nav>\n');
 				b.add("</div>\n");
 				b.add('<script src="$toc"></script>');
